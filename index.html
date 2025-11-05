@@ -1,7 +1,184 @@
-!doctype html>
+<!doctype html>
 <html lang="pt-BR">
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width,initial-scale=1">
   <title>Primeira Menstruação — Guia</title>
   <meta name="description" content="Informações sobre primeira menstruação: guia, sintomas, cuidados, rastreador e FAQ. Mobile-first.">
+  <style>
+    :root{--bg:#ffffff;--card:#f8fafb;--text:#0f172a;--accent:#d946ef;--muted:#6b7280}
+    [data-theme="dark"]{--bg:#0b1220;--card:#071028;--text:#e6eef8;--accent:#a78bfa;--muted:#9aa7bf}
+    *{box-sizing:border-box}
+    html,body{height:100%;margin:0;font-family:Inter,system-ui,-apple-system,"Segoe UI",Roboto,"Helvetica Neue",Arial;background:var(--bg);color:var(--text)}
+    .app{max-width:900px;margin:0 auto;padding:18px}
+    header{display:flex;align-items:center;gap:12px}
+    .logo{width:48px;height:48px;border-radius:10px;background:linear-gradient(135deg,var(--accent),#fb7185);display:flex;align-items:center;justify-content:center;color:white;font-weight:700}
+    h1{font-size:18px;margin:0}
+    p.lead{margin:6px 0 14px;color:var(--muted);font-size:13px}
+    nav{display:flex;gap:8px;overflow:auto;padding-bottom:8px}
+    a.chip{background:var(--card);padding:8px 12px;border-radius:999px;font-size:13px;white-space:nowrap;text-decoration:none;color:var(--text)}
+    a.chip:hover{background:var(--accent);color:white}
+    main{display:grid;grid-template-columns:1fr;gap:12px}
+    .card{background:var(--card);padding:12px;border-radius:12px;box-shadow:0 1px 2px rgba(2,6,23,.04)}
+    .grid-2{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+    .btn{display:inline-block;padding:10px 12px;border-radius:10px;background:var(--accent);color:white;text-decoration:none;font-weight:600}
+    .muted{color:var(--muted);font-size:13px}
+    .faq-item{border-radius:8px;overflow:hidden}
+    .faq-summary{display:flex;justify-content:space-between;align-items:center;padding:10px;cursor:pointer}
+    .faq-body{padding:10px;border-top:1px solid rgba(15,23,42,0.04);display:none}
+    label{display:block;margin-top:8px;font-size:13px}
+    input[type="date"],input[type="number"],select{width:100%;padding:8px;border-radius:8px;border:1px solid #e6eef8;background:white}
+    .question{margin:8px 0}
+    footer{display:flex;justify-content:space-between;align-items:center;margin-top:18px}
+    .small{font-size:12px;color:var(--muted)}
+    .back-top{display:block;margin-top:10px;text-align:center;font-size:13px;text-decoration:none;color:var(--accent)}
+    @media(min-width:720px){main{grid-template-columns:2fr 1fr}}
+  </style>
+</head>
+<body data-theme="light">
+  <div class="app">
+    <header>
+      <div class="logo">PM</div>
+      <div>
+        <h1>Primeira Menstruação</h1>
+        <p class="lead">Guia prático para adolescentes, responsáveis e educadores — Mobile First</p>
+      </div>
+      <div style="margin-left:auto;display:flex;gap:8px;align-items:center">
+        <button id="toggleTheme" class="chip">Dark</button>
+      </div>
+    </header>
+
+    <nav aria-label="Seções">
+      <a href="#guia" class="chip">Guia Rápido</a>
+      <a href="#symptoms" class="chip">Sintomas</a>
+      <a href="#tracker" class="chip">Rastreador</a>
+      <a href="#faq" class="chip">FAQ</a>
+      <a href="#quiz" class="chip">Quiz</a>
+    </nav>
+
+    <main>
+      <section id="guia">
+        <article class="card">
+          <h2>O que é a primeira menstruação?</h2>
+          <p class="muted">A primeira menstruação (menarca) é quando o corpo de uma menina começa a liberar o revestimento do útero — um marco natural da puberdade. A idade típica varia, geralmente entre 9 e 15 anos, e pode ser diferente para cada pessoa.</p>
+          <div class="grid-2" style="margin-top:10px">
+            <div class="card" style="padding:10px">
+              <strong>Dicas práticas</strong>
+              <ul class="muted">
+                <li>Tenha absorventes disponíveis e um plano discreto.</li>
+                <li>Explicar o ciclo menstrual com linguagem simples e positiva.</li>
+                <li>Levar em conta sintomas físicos e emocionais.</li>
+              </ul>
+            </div>
+            <div class="card" style="padding:10px">
+              <strong>Para responsáveis</strong>
+              <ul class="muted">
+                <li>Converse com calma e sem tabus.</li>
+                <li>Ofereça apoio e informação confiável.</li>
+                <li>Se houver dor intensa, procure um profissional de saúde.</li>
+              </ul>
+            </div>
+          </div>
+          <a href="#topo" class="back-top">↑ Voltar ao topo</a>
+        </article>
+
+        <article class="card" id="symptoms">
+          <h3>Sintomas comuns antes e durante</h3>
+          <p class="muted">Cada pessoa sente diferente — aqui estão os sintomas mais comuns:</p>
+          <ul class="muted">
+            <li>Dor abdominal (cólicas)</li>
+            <li>Sensibilidade nas mamas</li>
+            <li>Mudanças de humor</li>
+            <li>Fadiga</li>
+            <li>Fluxo leve a mais intenso nos primeiros dias</li>
+          </ul>
+          <a href="#topo" class="back-top">↑ Voltar ao topo</a>
+        </article>
+
+        <article class="card" id="tracker">
+          <h3>Rastreador simples</h3>
+          <form id="trackerForm">
+            <label for="lastDate">Data do último ciclo (ou da primeira menstruação):</label>
+            <input type="date" id="lastDate" required>
+            <label for="cycleLength">Duração média do ciclo (dias):</label>
+            <input type="number" id="cycleLength" min="20" max="45" placeholder="ex: 28" required>
+            <button type="submit" class="btn" style="margin-top:10px">Calcular próxima</button>
+          </form>
+          <div id="trackerResult" style="margin-top:10px" class="muted"></div>
+          <div style="margin-top:8px" class="small">Os dados ficam salvos localmente no dispositivo.</div>
+          <a href="#topo" class="back-top">↑ Voltar ao topo</a>
+        </article>
+
+        <article class="card" id="faq">
+          <h3>Perguntas frequentes</h3>
+          <div class="faq-item">
+            <div class="faq-summary">O que é normal na primeira menstruação?<span>+</span></div>
+            <div class="faq-body">Fluxo variável, cólicas leves a moderadas, e dias irregulares nos primeiros ciclos são comuns.</div>
+          </div>
+          <div class="faq-item">
+            <div class="faq-summary">Quando devo procurar um médico?<span>+</span></div>
+            <div class="faq-body">Se houver sangramento muito intenso, dor intensa que atrapalha a vida diária, ou ausência de menstruação após 3 anos da puberdade.</div>
+          </div>
+          <a href="#topo" class="back-top">↑ Voltar ao topo</a>
+        </article>
+
+        <article class="card" id="quiz">
+          <h3>Mini-quiz educativo</h3>
+          <div id="quizArea">
+            <div class="question">1) A menstruação significa que a pessoa está doente? <br><label><input type="radio" name="q1" value="false"> Não</label> <label><input type="radio" name="q1" value="true"> Sim</label></div>
+            <div class="question">2) É normal ter ciclos irregulares nos primeiros anos? <br><label><input type="radio" name="q2" value="true"> Sim</label> <label><input type="radio" name="q2" value="false"> Não</label></div>
+            <button id="submitQuiz" class="btn">Ver resultado</button>
+            <div id="quizResult" class="muted" style="margin-top:8px"></div>
+          </div>
+          <a href="#topo" class="back-top">↑ Voltar ao topo</a>
+        </article>
+      </section>
+
+      <aside>
+        <div class="card">
+          <strong>Recursos rápidos</strong>
+          <ul class="muted" style="padding-left:16px">
+            <li>Como usar absorventes e coletores</li>
+            <li>Quando falar com um profissional</li>
+            <li>Linhas de apoio locais</li>
+          </ul>
+          <div style="margin-top:8px"><a id="openGuide" class="btn">Guia passo-a-passo</a></div>
+        </div>
+
+        <div class="card" style="margin-top:10px">
+          <strong>Toque de privacidade</strong>
+          <p class="muted">O app não envia seus dados para servidores. Tudo é armazenado localmente (localStorage).</p>
+        </div>
+
+        <div class="card" style="margin-top:10px">
+          <strong>Contato</strong>
+          <p class="muted">Se precisar de ajuda, procure um profissional de saúde ou serviço local.</p>
+        </div>
+      </aside>
+    </main>
+
+    <footer class="small" id="topo">
+      <div>Versão protótipo • Mobile-first</div>
+      <div>Feito com ❤️</div>
+    </footer>
+  </div>
+
+  <script>
+    const themeBtn=document.getElementById('toggleTheme');
+    themeBtn.addEventListener('click',()=>{const body=document.body;const isDark=body.getAttribute('data-theme')==='dark';body.setAttribute('data-theme',isDark?'light':'dark');themeBtn.textContent=isDark?'Dark':'Light'});
+
+    document.querySelectorAll('.faq-summary').forEach(s=>{s.addEventListener('click',()=>{const body=s.nextElementSibling;const open=body.style.display==='block';body.style.display=open?'none':'block';s.querySelector('span').textContent=open?'+':'-'});});
+
+    const trackerForm=document.getElementById('trackerForm');
+    const trackerResult=document.getElementById('trackerResult');
+    function loadTracker(){const data=localStorage.getItem('pm_tracker');if(!data)return;const obj=JSON.parse(data);document.getElementById('lastDate').value=obj.lastDate;document.getElementById('cycleLength').value=obj.cycleLength;showNext(obj.lastDate,obj.cycleLength)}
+    function showNext(lastDate,cycle){if(!lastDate||!cycle)return trackerResult.textContent='';const d=new Date(lastDate);d.setDate(d.getDate()+Number(cycle));trackerResult.textContent='Próxima menstruação estimada: '+d.toLocaleDateString()}
+    trackerForm.addEventListener('submit',e=>{e.preventDefault();const last=document.getElementById('lastDate').value;const cycle=document.getElementById('cycleLength').value;if(!last||!cycle)return;localStorage.setItem('pm_tracker',JSON.stringify({lastDate:last,cycleLength:cycle}));showNext(last,cycle);alert('Dados salvos localmente.')});
+    loadTracker();
+
+    document.getElementById('submitQuiz').addEventListener('click',()=>{const answers={q1:'false',q2:'true'};let score=0,total=2;for(let i=1;i<=total;i++){const val=document.querySelector('input[name="q'+i+'"]:checked');if(!val)continue;if(val.value===answers['q'+i])score++}document.getElementById('quizResult').textContent=`Você acertou ${score} de ${total}.`;});
+
+    document.getElementById('openGuide').addEventListener('click',()=>{alert('Guia: Explique que é normal, ofereça absorventes, e sugira procurar um adulto de confiança.')});
+  </script>
+</body>
+</html>
