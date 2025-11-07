@@ -3,182 +3,196 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width,initial-scale=1">
-  <title>Primeira Menstruação — Guia</title>
-  <meta name="description" content="Informações sobre primeira menstruação: guia, sintomas, cuidados, rastreador e FAQ. Mobile-first.">
-  <style>
-    :root{--bg:#ffffff;--card:#f8fafb;--text:#0f172a;--accent:#d946ef;--muted:#6b7280}
-    [data-theme="dark"]{--bg:#0b1220;--card:#071028;--text:#e6eef8;--accent:#a78bfa;--muted:#9aa7bf}
-    *{box-sizing:border-box}
-    html,body{height:100%;margin:0;font-family:Inter,system-ui,-apple-system,"Segoe UI",Roboto,"Helvetica Neue",Arial;background:var(--bg);color:var(--text)}
-    .app{max-width:900px;margin:0 auto;padding:18px}
-    header{display:flex;align-items:center;gap:12px}
-    .logo{width:48px;height:48px;border-radius:10px;background:linear-gradient(135deg,var(--accent),#fb7185);display:flex;align-items:center;justify-content:center;color:white;font-weight:700}
-    h1{font-size:18px;margin:0}
-    p.lead{margin:6px 0 14px;color:var(--muted);font-size:13px}
-    nav{display:flex;gap:8px;overflow:auto;padding-bottom:8px}
-    a.chip{background:var(--card);padding:8px 12px;border-radius:999px;font-size:13px;white-space:nowrap;text-decoration:none;color:var(--text)}
-    a.chip:hover{background:var(--accent);color:white}
-    main{display:grid;grid-template-columns:1fr;gap:12px}
-    .card{background:var(--card);padding:12px;border-radius:12px;box-shadow:0 1px 2px rgba(2,6,23,.04)}
-    .grid-2{display:grid;grid-template-columns:1fr 1fr;gap:10px}
-    .btn{display:inline-block;padding:10px 12px;border-radius:10px;background:var(--accent);color:white;text-decoration:none;font-weight:600}
-    .muted{color:var(--muted);font-size:13px}
-    .faq-item{border-radius:8px;overflow:hidden}
-    .faq-summary{display:flex;justify-content:space-between;align-items:center;padding:10px;cursor:pointer}
-    .faq-body{padding:10px;border-top:1px solid rgba(15,23,42,0.04);display:none}
-    label{display:block;margin-top:8px;font-size:13px}
-    input[type="date"],input[type="number"],select{width:100%;padding:8px;border-radius:8px;border:1px solid #e6eef8;background:white}
-    .question{margin:8px 0}
-    footer{display:flex;justify-content:space-between;align-items:center;margin-top:18px}
-    .small{font-size:12px;color:var(--muted)}
-    .back-top{display:block;margin-top:10px;text-align:center;font-size:13px;text-decoration:none;color:var(--accent)}
-    @media(min-width:720px){main{grid-template-columns:2fr 1fr}}
-  </style>
+  <title>Guia da Primeira Menstruação</title>
+  <meta name="description" content="Guia educativo sobre primeira menstruação: ciclo, bem-estar, cuidados, sexualidade e onde buscar ajuda.">
+  <link rel="stylesheet" href="style.css">
 </head>
 <body data-theme="light">
   <div class="app">
     <header>
-      <div class="logo">PM</div>
-      <div>
-        <h1>Primeira Menstruação</h1>
-        <p class="lead">Guia prático para adolescentes, responsáveis e educadores — Mobile First</p>
+      <div class="logo">M</div>
+      <div style="min-width:0">
+        <h1>Guia da Primeira Menstruação</h1>
+        <p class="lead">Guia educativo e interativo</p>
       </div>
       <div style="margin-left:auto;display:flex;gap:8px;align-items:center">
-        <button id="toggleTheme" class="chip">Dark</button>
+        <button id="toggleTheme" class="chip" aria-pressed="false">Dark</button>
       </div>
     </header>
 
-    <nav aria-label="Seções">
-      <a href="#guia" class="chip">Guia Rápido</a>
-      <a href="#symptoms" class="chip">Sintomas</a>
-      <a href="#tracker" class="chip">Rastreador</a>
-      <a href="#faq" class="chip">FAQ</a>
-      <a href="#quiz" class="chip">Quiz</a>
-    </nav>
-
     <main>
-      <section id="guia">
-        <article class="card">
-          <h2>O que é a primeira menstruação?</h2>
-          <p class="muted">A primeira menstruação (menarca) é quando o corpo de uma menina começa a liberar o revestimento do útero — um marco natural da puberdade. A idade típica varia, geralmente entre 9 e 15 anos, e pode ser diferente para cada pessoa.</p>
-          <div class="grid-2" style="margin-top:10px">
-            <div class="card" style="padding:10px">
-              <strong>Dicas práticas</strong>
-              <ul class="muted">
-                <li>Tenha absorventes disponíveis e um plano discreto.</li>
-                <li>Explicar o ciclo menstrual com linguagem simples e positiva.</li>
-                <li>Levar em conta sintomas físicos e emocionais.</li>
-              </ul>
-            </div>
-            <div class="card" style="padding:10px">
-              <strong>Para responsáveis</strong>
-              <ul class="muted">
-                <li>Converse com calma e sem tabus.</li>
-                <li>Ofereça apoio e informação confiável.</li>
-                <li>Se houver dor intensa, procure um profissional de saúde.</li>
-              </ul>
-            </div>
-          </div>
-          <a href="#topo" class="back-top">↑ Voltar ao topo</a>
-        </article>
+      <section class="accordion">
+        <button class="acc-btn" aria-expanded="false" aria-controls="mod1">
+          Módulo 1 — Entendendo a Menstruação
+          <span class="chev">v</span>
+        </button>
+        <div class="acc-body" id="mod1">
+          <article class="card">
+            <h3>Card Principal: Título</h3>
+            <p class="card-title">O que é o Ciclo?</p>
+            <p class="card-body">Card Principal: Corpo — O ciclo menstrual começa no primeiro dia da sua menstruação e vai até o dia anterior à próxima. Seu corpo se prepara para uma possível gravidez a cada mês. Se ela não acontece, ele 'limpa a casa' e o sangramento vem. Duração Normal: 21 a 35 dias.</p>
+          </article>
 
-        <article class="card" id="symptoms">
-          <h3>Sintomas comuns antes e durante</h3>
-          <p class="muted">Cada pessoa sente diferente — aqui estão os sintomas mais comuns:</p>
-          <ul class="muted">
-            <li>Dor abdominal (cólicas)</li>
-            <li>Sensibilidade nas mamas</li>
-            <li>Mudanças de humor</li>
-            <li>Fadiga</li>
-            <li>Fluxo leve a mais intenso nos primeiros dias</li>
-          </ul>
-          <a href="#topo" class="back-top">↑ Voltar ao topo</a>
-        </article>
+          <div class="phases">
+            <article class="mini-card">
+              <h4>Fase 1: Título</h4>
+              <p class="mini-title">Menstruação</p>
+              <p>Fase 1: Conteúdo — É a descamação da camada interna do seu útero (endométrio). Dica: Não é sangue 'sujo'! É apenas um tecido que seu corpo não precisava mais. A duração costuma ser de 3 a 7 dias.</p>
+            </article>
 
-        <article class="card" id="tracker">
-          <h3>Rastreador simples</h3>
-          <form id="trackerForm">
-            <label for="lastDate">Data do último ciclo (ou da primeira menstruação):</label>
-            <input type="date" id="lastDate" required>
-            <label for="cycleLength">Duração média do ciclo (dias):</label>
-            <input type="number" id="cycleLength" min="20" max="45" placeholder="ex: 28" required>
-            <button type="submit" class="btn" style="margin-top:10px">Calcular próxima</button>
-          </form>
-          <div id="trackerResult" style="margin-top:10px" class="muted"></div>
-          <div style="margin-top:8px" class="small">Os dados ficam salvos localmente no dispositivo.</div>
-          <a href="#topo" class="back-top">↑ Voltar ao topo</a>
-        </article>
+            <article class="mini-card">
+              <h4>Fase 2: Título</h4>
+              <p class="mini-title">Folicular (Pré-Ovulação)</p>
+              <p>Fase 2: Conteúdo — Seu corpo está produzindo estrogênio e preparando um óvulo. Muitas vezes você se sente com mais energia, disposta e com mais foco.</p>
+            </article>
 
-        <article class="card" id="faq">
-          <h3>Perguntas frequentes</h3>
-          <div class="faq-item">
-            <div class="faq-summary">O que é normal na primeira menstruação?<span>+</span></div>
-            <div class="faq-body">Fluxo variável, cólicas leves a moderadas, e dias irregulares nos primeiros ciclos são comuns.</div>
-          </div>
-          <div class="faq-item">
-            <div class="faq-summary">Quando devo procurar um médico?<span>+</span></div>
-            <div class="faq-body">Se houver sangramento muito intenso, dor intensa que atrapalha a vida diária, ou ausência de menstruação após 3 anos da puberdade.</div>
-          </div>
-          <a href="#topo" class="back-top">↑ Voltar ao topo</a>
-        </article>
+            <article class="mini-card">
+              <h4>Fase 3: Título</h4>
+              <p class="mini-title">Ovulação</p>
+              <p>Fase 3: Conteúdo — O óvulo é liberado. É o "ápice" do seu ciclo, e você pode notar um muco vaginal mais transparente e elástico neste período.</p>
+            </article>
 
-        <article class="card" id="quiz">
-          <h3>Mini-quiz educativo</h3>
-          <div id="quizArea">
-            <div class="question">1) A menstruação significa que a pessoa está doente? <br><label><input type="radio" name="q1" value="false"> Não</label> <label><input type="radio" name="q1" value="true"> Sim</label></div>
-            <div class="question">2) É normal ter ciclos irregulares nos primeiros anos? <br><label><input type="radio" name="q2" value="true"> Sim</label> <label><input type="radio" name="q2" value="false"> Não</label></div>
-            <button id="submitQuiz" class="btn">Ver resultado</button>
-            <div id="quizResult" class="muted" style="margin-top:8px"></div>
+            <article class="mini-card">
+              <h4>Fase 4: Título</h4>
+              <p class="mini-title">Lútea (Pré-Menstrual)</p>
+              <p>Fase 4: Conteúdo — O hormônio progesterona domina aqui. É normal sentir mais sono, inchaço e algumas mudanças de humor (TPM). Seu corpo está guardando energia.</p>
+            </article>
           </div>
-          <a href="#topo" class="back-top">↑ Voltar ao topo</a>
-        </article>
+
+          <article class="alert-card">
+            <h3>Sinais de Alerta: Título</h3>
+            <p class="alert-title">🚨 Sinais de Alerta (Quando procurar o Enfermeiro?)</p>
+            <ul>
+              <li>Sinais de Alerta: Item 1 — Fluxo Muito Forte: Precisa trocar absorvente de hora em hora por mais de 4 horas seguidas.</li>
+              <li>Sinais de Alerta: Item 2 — Dor Incapacitante: Cólica que não passa com remédio ou te impede de ir à aula/trabalho, ou que te faz vomitar.</li>
+              <li>Sinais de Alerta: Item 3 — Ciclos Extremos: Ciclo com menos de 21 dias ou mais de 35 dias, de forma persistente.</li>
+            </ul>
+          </article>
+        </div>
+      </section>
+      <section class="accordion">
+        <button class="acc-btn" aria-expanded="false" aria-controls="mod2">
+          Módulo 2 — Bem-estar e Emoções
+          <span class="chev">v</span>
+        </button>
+        <div class="acc-body" id="mod2">
+          <article class="card">
+            <h3>💪 MÓDULO 2: BEM-ESTAR E EMOÇÕES</h3>
+            <h4>Card Cólicas: Título</h4>
+            <p class="card-title">Cólicas: O Que Alivia?</p>
+            <ul>
+              <li>Cólicas: Item 1 (Calor) — 🔥 Calor: Use bolsa de água quente na barriga/costas. Ajuda a relaxar os músculos do útero.</li>
+              <li>Cólicas: Item 2 (Remédio) — 💊 Remédio: Tome o analgésico no início do incômodo (não espere a dor ficar insuportável). Converse com o enfermeiro sobre qual é o mais indicado.</li>
+              <li>Cólicas: Item 3 (Movimento) — 🧘♀️ Movimento: Alongamentos suaves e caminhadas leves podem ajudar a relaxar.</li>
+            </ul>
+
+            <h4>Card TPM/TDPM: Título</h4>
+            <p class="card-title">TPM vs. TDPM (Transtorno Disfórico Pré-Menstrual)</p>
+            <p class="card-body">Card TPM/TDPM: Corpo — É normal sentir-se diferente (irritada, cansada) antes da menstruação. Se as emoções ou a ansiedade forem tão fortes que atrapalham seus estudos ou sua vida social, chame isso de TDPM. Nesses casos, converse com o enfermeiro ou um psicólogo.</p>
+
+            <h4>Card Nutrição: Título</h4>
+            <p class="card-title">Nutrição e Seu Humor</p>
+            <ul>
+              <li>Nutrição: Item 1 — Beba Água: Ajuda a reduzir o inchaço e a retenção de líquido da fase pré-menstrual.</li>
+              <li>Nutrição: Item 2 — Coma Ferro: Durante o fluxo, alimentos ricos em ferro (carne, legumes escuros) ajudam a repor o que foi perdido e evitam a fraqueza.</li>
+              <li>Nutrição: Item 3 — Reduza o Sal: Menos sal ajuda a reduzir o inchaço.</li>
+            </ul>
+          </article>
+        </div>
+      </section>
+      <section class="accordion">
+        <button class="acc-btn" aria-expanded="false" aria-controls="mod3">
+          Módulo 3 — Cuidados Práticos e Higiene
+          <span class="chev">v</span>
+        </button>
+        <div class="acc-body" id="mod3">
+          <article class="card">
+            <h3>🧺 MÓDULO 3: CUIDADOS PRÁTICOS E HIGIENE</h3>
+
+            <h4>Card Higiene: Título</h4>
+            <p class="card-title">Higiene Íntima Correta</p>
+            <ul>
+              <li>Higiene: Item 1 (Lavar) — Como lavar: Sempre de frente para trás. Use água e sabão neutro (ou sabonete íntimo) somente na parte externa.</li>
+              <li>Higiene: Item 2 (Evitar) — O quê evitar: Nunca lave o canal vaginal por dentro (ele se limpa sozinho!).</li>
+            </ul>
+
+            <h4>Card Frequência: Título</h4>
+            <p class="card-title">Frequência de Troca</p>
+            <p>Frequência: Regra — Regra de Ouro: Trocar absorvente (externo) a cada 3 a 4 horas, mesmo com pouco fluxo. Trocar a tempo evita odores e ajuda a manter a pele saudável.</p>
+
+            <h4>Card EcoAbsorvente: Título</h4>
+            <p class="card-title">Card de Produto: EcoAbsorvente de Pano</p>
+            <p>EcoAbsorvente: Vantagens — Vantagens: Sustentável, econômico a longo prazo e muito confortável.</p>
+            <p>EcoAbsorvente: Atenção — Atenção: A lavagem correta é crucial para a sua saúde! Lave-o à mão após o uso, seque-o totalmente ao sol e guarde-o em um local arejado.</p>
+
+            <h4>Card Descarte: Título</h4>
+            <p class="card-title">Descarte Consciente</p>
+            <ul>
+              <li>Descarte: Item 1 (Onde) — Onde Jogar: No lixo comum. Sempre embrulhe o produto usado em papel higiênico ou na embalagem original antes de descartar.</li>
+              <li>Descarte: Item 2 (Nunca) — Nunca jogue absorvente, papel higiênico ou outros produtos no vaso sanitário.</li>
+            </ul>
+          </article>
+        </div>
+      </section>
+      <section class="accordion">
+        <button class="acc-btn" aria-expanded="false" aria-controls="mod4">
+          Módulo 4 — Sexualidade e Prevenção
+          <span class="chev">v</span>
+        </button>
+        <div class="acc-body" id="mod4">
+          <article class="card">
+            <h3>💘 MÓDULO 4: SEXUALIDADE E PREVENÇÃO</h3>
+
+            <h4>Card Alerta: Título</h4>
+            <p class="card-title">O Ciclo Não é Contraceptivo! (Alerta)</p>
+            <p>Alerta: Mito — Mito: O ciclo menstrual regular é confiável para evitar gravidez.</p>
+            <p>Alerta: Verdade — Verdade: O corpo adolescente é irregular! Não use o app como um calendário contraceptivo. A única forma segura de evitar gravidez é o uso consistente de métodos.</p>
+
+            <h4>Card ISTs: Título</h4>
+            <p class="card-title">Prevenção de ISTs/Aids</p>
+            <p>ISTs: Corpo — A camisinha (masculina ou feminina) é o único método que evita as Infecções Sexualmente Transmissíveis (ISTs) e ainda ajuda a evitar gravidez. Você pode conseguir camisinhas de graça na enfermaria da escola ou no posto de saúde.</p>
+
+            <h4>Card Contraceptivos: Título</h4>
+            <p class="card-title">Métodos Contraceptivos</p>
+            <p>Contraceptivos: Corpo — Se você está pensando em usar um método (pílula, injetável, implante), venha conversar! O enfermeiro pode te dar o primeiro aconselhamento e te encaminhar para o serviço de saúde. Sua escolha é importante e precisa de acompanhamento profissional.</p>
+          </article>
+        </div>
+      </section>
+      <section class="accordion">
+        <button class="acc-btn" aria-expanded="false" aria-controls="mod5">
+          Módulo 5 — Onde Buscar Ajuda
+          <span class="chev">v</span>
+        </button>
+        <div class="acc-body" id="mod5">
+          <article class="card">
+            <h3>✅ MÓDULO 5: ONDE BUSCAR AJUDA (Acesso Fácil)</h3>
+            <h4>Card: Título Principal</h4>
+            <p class="card-title">Não Está Sozinha! Onde Buscar Ajuda?</p>
+            <ul>
+              <li>Card: Item 1 (Enfermeiro) — Seu Enfermeiro(a) Escolar: Para perguntas sobre seu ciclo, cólicas, métodos contraceptivos, e aconselhamento sobre ISTs. Ele/ela é o seu primeiro ponto de apoio e pode te orientar.</li>
+              <li>Card: Item 2 (Posto de Saúde) — Posto de Saúde/UBS: Local de acesso gratuito a camisinhas, testes rápidos, pílula do dia seguinte (se necessário) e para iniciar o uso de métodos contraceptivos com acompanhamento médico.</li>
+              <li>Card: Item 3 (Psicólogo) — Psicólogo(a): Para suporte emocional, lidar com estresse, ansiedade e em casos de TDPM (Transtorno Disfórico Pré-Menstrual) ou questões sobre sexualidade e relacionamentos.</li>
+            </ul>
+          </article>
+        </div>
       </section>
 
-      <aside>
-        <div class="card">
-          <strong>Recursos rápidos</strong>
-          <ul class="muted" style="padding-left:16px">
-            <li>Como usar absorventes e coletores</li>
-            <li>Quando falar com um profissional</li>
-            <li>Linhas de apoio locais</li>
-          </ul>
-          <div style="margin-top:8px"><a id="openGuide" class="btn">Guia passo-a-passo</a></div>
-        </div>
-
-        <div class="card" style="margin-top:10px">
-          <strong>Toque de privacidade</strong>
-          <p class="muted">O app não envia seus dados para servidores. Tudo é armazenado localmente (localStorage).</p>
-        </div>
-
-        <div class="card" style="margin-top:10px">
-          <strong>Contato</strong>
-          <p class="muted">Se precisar de ajuda, procure um profissional de saúde ou serviço local.</p>
-        </div>
-      </aside>
     </main>
 
     <footer class="small" id="topo">
-      <div>Versão protótipo • Mobile-first</div>
-      <div>Feito com ❤️</div>
+      <div>Versão Mobile — 2025</div>
     </footer>
   </div>
 
-  <script>
-    const themeBtn=document.getElementById('toggleTheme');
-    themeBtn.addEventListener('click',()=>{const body=document.body;const isDark=body.getAttribute('data-theme')==='dark';body.setAttribute('data-theme',isDark?'light':'dark');themeBtn.textContent=isDark?'Dark':'Light'});
+  <button id="scrollTopBtn" title="Voltar ao topo">⬆️</button>
 
-    document.querySelectorAll('.faq-summary').forEach(s=>{s.addEventListener('click',()=>{const body=s.nextElementSibling;const open=body.style.display==='block';body.style.display=open?'none':'block';s.querySelector('span').textContent=open?'+':'-'});});
+  <div class="bottom-bar">
+    <button onclick="window.scrollTo({top:0,behavior:'smooth'})">🏠<span>Início</span></button>
+    <button onclick="alert('Calendário em desenvolvimento!')">📅<span>Calendário</span></button>
+    <button onclick="alert('Comunidade em breve!')">💬<span>Comunidade</span></button>
+    <button onclick="alert('Perfil em breve!')">👤<span>Perfil</span></button>
+  </div>
 
-    const trackerForm=document.getElementById('trackerForm');
-    const trackerResult=document.getElementById('trackerResult');
-    function loadTracker(){const data=localStorage.getItem('pm_tracker');if(!data)return;const obj=JSON.parse(data);document.getElementById('lastDate').value=obj.lastDate;document.getElementById('cycleLength').value=obj.cycleLength;showNext(obj.lastDate,obj.cycleLength)}
-    function showNext(lastDate,cycle){if(!lastDate||!cycle)return trackerResult.textContent='';const d=new Date(lastDate);d.setDate(d.getDate()+Number(cycle));trackerResult.textContent='Próxima menstruação estimada: '+d.toLocaleDateString()}
-    trackerForm.addEventListener('submit',e=>{e.preventDefault();const last=document.getElementById('lastDate').value;const cycle=document.getElementById('cycleLength').value;if(!last||!cycle)return;localStorage.setItem('pm_tracker',JSON.stringify({lastDate:last,cycleLength:cycle}));showNext(last,cycle);alert('Dados salvos localmente.')});
-    loadTracker();
-
-    document.getElementById('submitQuiz').addEventListener('click',()=>{const answers={q1:'false',q2:'true'};let score=0,total=2;for(let i=1;i<=total;i++){const val=document.querySelector('input[name="q'+i+'"]:checked');if(!val)continue;if(val.value===answers['q'+i])score++}document.getElementById('quizResult').textContent=`Você acertou ${score} de ${total}.`;});
-
-    document.getElementById('openGuide').addEventListener('click',()=>{alert('Guia: Explique que é normal, ofereça absorventes, e sugira procurar um adulto de confiança.')});
-  </script>
+  <script src="script.js"></script>
 </body>
 </html>
